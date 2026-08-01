@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hassan Abelhad — Web Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-500 selection:text-white relative">
+
+    <!-- FLOATING ISLAND NAVIGATION MENU (Pill bar) -->
+    <header class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl mx-auto">
+      <nav id="navbar-container" class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-300">
+        
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-1 bg-slate-100/60 p-1 rounded-full border border-slate-200/50">
+          <a href="#hero" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-indigo-600 bg-indigo-50/80 shadow-xs transition-all duration-200 hover:text-indigo-600" data-i18n="navHome">Home</a>
+          <a href="#work" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 transition-all duration-200 hover:text-indigo-600 hover:bg-white/80" data-i18n="navWork">Work</a>
+          <a href="#about" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 transition-all duration-200 hover:text-indigo-600 hover:bg-white/80" data-i18n="navAbout">About</a>
+          <a href="#services" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 transition-all duration-200 hover:text-indigo-600 hover:bg-white/80" data-i18n="navServices">Services</a>
+          <a href="#contact" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 transition-all duration-200 hover:text-indigo-600 hover:bg-white/80" data-i18n="navContact">Contact</a>
+        </div>
+
+        <!-- Right Side CTA, Language Switcher & Mobile Toggle -->
+        <div class="flex items-center gap-2 sm:gap-2.5">
+          
+          <!-- Language Switcher Dual Pill (Always accessible directly in header) -->
+          <div class="flex items-center bg-slate-100/90 rounded-full p-0.5 border border-slate-200/60 text-xs shadow-inner">
+            <button id="lang-btn-en" aria-label="Switch to English" class="px-2.5 py-1 rounded-full transition-all duration-200 font-bold text-indigo-600 bg-white shadow-xs cursor-pointer">EN</button>
+            <button id="lang-btn-fr" aria-label="Passer en Français" class="px-2.5 py-1 rounded-full transition-all duration-200 text-slate-500 hover:text-slate-800 font-semibold cursor-pointer">FR</button>
+          </div>
+
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white bg-slate-900 hover:bg-indigo-600 shadow-md hover:shadow-indigo-500/25 transition-all duration-300">
+            <span data-i18n="navLetsTalk">Let's Talk</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-full text-slate-700 bg-slate-100/80 hover:bg-slate-200/80 border border-slate-200/60 focus:outline-none transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 p-3 rounded-2xl glass-panel border border-white/60 shadow-xl flex flex-col gap-1 transition-all">
+        <a href="#hero" class="nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="navHome">Home</a>
+        <a href="#work" class="nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="navWork">Work</a>
+        <a href="#about" class="nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="navAbout">About</a>
+        <a href="#services" class="nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="navServices">Services</a>
+        <a href="#contact" class="nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="navContact">Contact</a>
+        <div class="pt-2 border-t border-slate-200/50">
+          <a href="#contact" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">
+            <span data-i18n="navGetInTouch">Get In Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN HERO SECTION -->
+    <section id="hero" class="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center hero-bg-container overflow-hidden">
+      
+      <!-- Ambient Spotlight glow -->
+      <div class="spotlight"></div>
+
+      <!-- Decorative Ambient Orbs -->
+      <div class="absolute top-1/4 left-10 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+      <div class="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-indigo-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- LEFT COLUMN: Hero Copy & Actions -->
+          <div class="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+            
+            <!-- Availability Status Pill -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/70 border border-emerald-200/60 shadow-xs backdrop-blur-md">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-status"></span>
+              <span class="text-xs font-semibold text-slate-700 tracking-wide uppercase" data-i18n="availability">Available for full time or freelance</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight font-['Outfit'] leading-[1.12]">
+              <span data-i18n="heroGreetingPrefix">Hello, I'm</span> <span class="gradient-text-hero">Hassan Abelhad</span>
+            </h1>
+
+            <!-- Bio Description -->
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl leading-relaxed font-medium" data-i18n="heroBio">
+              I'm a web developer with a focus on creating functional and user-friendly web applications.
+            </p>
+
+            <!-- Action Buttons & Badges -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#work" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-300">
+                <span data-i18n="btnWork">View Projects</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-slate-700 bg-white/80 hover:bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-md">
+                <span data-i18n="btnContact">Get In Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </a>
+            </div>
+
+            <!-- Social / Quick Contact Links -->
+            <div class="pt-6 border-t border-slate-200/60 w-full flex flex-wrap items-center gap-3">
+              <!-- GitHub Link -->
+              <a href="https://github.com/Abelhad" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                <span>GitHub Profile</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+
+              <!-- Copy Gmail Button -->
+              <button id="copy-email-btn" data-email="hassanabelhad52@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/90 border border-slate-200 text-slate-700 text-xs font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-xs hover:-translate-y-0.5 cursor-pointer">
+                <svg id="copy-email-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span id="copy-email-text">hassanabelhad52@gmail.com</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Frosted Glass Card -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-md">
+              
+              <!-- Floating accent badge 1 -->
+              <div class="absolute -top-6 -left-6 z-20 animate-float">
+                <div class="px-4 py-2 rounded-2xl glass-panel text-xs font-bold text-slate-800 flex items-center gap-2 shadow-lg border border-white/80">
+                  <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                  <span data-i18n="badge1">React & Laravel Stack</span>
+                </div>
+              </div>
+
+              <!-- Floating accent badge 2 -->
+              <div class="absolute -bottom-6 -right-4 z-20 animate-float-slow">
+                <div class="px-4 py-2.5 rounded-2xl glass-panel text-xs font-bold text-slate-800 flex items-center gap-2 shadow-lg border border-white/80">
+                  <div class="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-[10px]">FS</div>
+                  <span data-i18n="badge2">Full-Stack Developer</span>
+                </div>
+              </div>
+
+              <!-- Main Glass Card -->
+              <div id="hero-3d-card" class="glass-card-3d rounded-3xl p-6 sm:p-8 relative overflow-hidden group">
+                
+                <!-- Card Inner Header -->
+                <div class="flex items-center justify-between pb-6 border-b border-white/40">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                  </div>
+                  <span class="text-xs font-mono text-slate-500 font-medium">tech-stack.config.json</span>
+                </div>
+
+                <!-- Code / Feature Highlights inside card -->
+                <div class="py-6 space-y-4">
+                  <div class="space-y-1">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600" data-i18n="cardSubtitle">Core Tech Stack</span>
+                    <h3 class="text-xl font-bold text-slate-900 font-['Outfit']" data-i18n="cardTitle">React & Laravel Development</h3>
+                  </div>
+
+                  <!-- Tech pills -->
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/60 shadow-xs">React</span>
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200/60 shadow-xs">Laravel</span>
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/70 text-slate-700 border border-slate-200/50">JavaScript</span>
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/70 text-slate-700 border border-slate-200/50">REST APIs</span>
+                    <span class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/70 text-slate-700 border border-slate-200/50">MySQL</span>
+                  </div>
+                </div>
+
+                <!-- Card Footer Quote -->
+                <div class="pt-4 border-t border-white/40 flex items-center justify-between text-xs text-slate-600">
+                  <span class="italic" data-i18n="quoteText">"Building clean & user-friendly web experiences."</span>
+                  <a href="#about" class="font-semibold text-indigo-600 hover:text-indigo-800 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 cursor-pointer" data-i18n="quoteDetails">
+                    Details &rarr;
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TARGET ANCHOR SECTIONS FOR SMOOTH SCROLL DEMONSTRATION -->
+    <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-16">
+      
+      <!-- Work Target Section -->
+      <section id="work" class="scroll-mt-32 space-y-8 max-w-4xl mx-auto">
+        <!-- Section Header -->
+        <div class="relative overflow-hidden rounded-3xl bg-slate-900 text-white border border-slate-800 p-6 sm:p-8 shadow-2xl">
+          <!-- Background Ambient Lighting -->
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-2">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-indigo-300 bg-indigo-950/80 border border-indigo-700/60 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+                <span data-i18n="secWorkBadge">Selected Work</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black font-['Outfit'] tracking-tight bg-gradient-to-r from-white via-slate-100 to-indigo-200 bg-clip-text text-transparent" data-i18n="secWorkTitle">
+                Featured Projects
+              </h2>
+            </div>
+            <a href="https://github.com/Abelhad" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs font-bold text-white bg-slate-800/90 border border-slate-700/80 shadow-md hover:bg-white hover:text-slate-900 transition-all self-start md:self-auto group shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span data-i18n="btnViewAllGithub">View All Repositories</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Projects Stack (Horizontal Cards) -->
+        <div class="space-y-6">
+          
+          <!-- Project 1: Tomato Timers -->
+          <div class="group flex flex-col md:flex-row bg-white border border-slate-200/90 rounded-3xl shadow-md hover:shadow-xl hover:border-rose-300 transition-all duration-300 overflow-hidden">
+            <!-- Left Column: Browser Mockup & Image -->
+            <div class="w-full md:w-5/12 bg-slate-950 flex flex-col shrink-0 border-b md:border-b-0 md:border-r border-slate-800">
+              <div class="bg-slate-900 border-b border-slate-800 px-3.5 py-2 flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                </div>
+                <div class="text-[10px] font-mono text-slate-400 bg-slate-800/80 px-2.5 py-0.5 rounded-full border border-slate-700/50">
+                  tomatotimers.app
+                </div>
+                <div class="w-6"></div>
+              </div>
+
+              <!-- Preview Image Banner -->
+              <div class="relative flex-1 min-h-[160px] md:min-h-[190px] p-2.5 flex items-center justify-center bg-slate-950 group/img">
+                <img 
+                  src="/src/assets/images/Capture d'écran 2026-08-01 022533.png" 
+                  alt="Tomato Timers Pomodoro App" 
+                  class="max-h-44 md:max-h-full w-auto object-contain group-hover:scale-[1.015] transition-transform duration-500 rounded-xl" 
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            <!-- Right Column: Content & Actions -->
+            <div class="w-full md:w-7/12 p-4.5 sm:p-5.5 flex flex-col justify-between space-y-3">
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 border border-rose-200/80" data-i18n="p1Badge">React & CSS App</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-extrabold font-['Outfit'] text-slate-900 group-hover:text-rose-600 transition-colors" data-i18n="p1Title">
+                  Tomato Timers — Pomodoro Focus App
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="p1Desc">
+                  A Pomodoro timer web application with customizable work and break sessions, task management, and a minimalist productivity-focused interface built using React and CSS.
+                </p>
+
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-1.5 pt-0.5">
+                  <span class="px-2.5 py-0.5 rounded-lg bg-rose-50 text-rose-800 font-mono text-[11px] font-semibold border border-rose-200/80">React</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-rose-50 text-rose-800 font-mono text-[11px] font-semibold border border-rose-200/80">CSS3</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">JavaScript</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">Local Storage</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div class="pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                <a href="https://github.com/Abelhad/pomodoro-timer" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors group/btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span data-i18n="linkGithub">GitHub Repo</span>
+                </a>
+                <a href="https://pomodoro-app-brown-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white text-xs font-bold shadow-md shadow-rose-500/20 transition-all group/btn">
+                  <span data-i18n="linkDemo">Live Project</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Rental Management Web App -->
+          <div class="group flex flex-col md:flex-row bg-white border border-slate-200/90 rounded-3xl shadow-md hover:shadow-xl hover:border-indigo-300 transition-all duration-300 overflow-hidden">
+            <!-- Left Column: Browser Mockup & Image -->
+            <div class="w-full md:w-5/12 bg-slate-950 flex flex-col shrink-0 border-b md:border-b-0 md:border-r border-slate-800">
+              <div class="bg-slate-900 border-b border-slate-800 px-3.5 py-2 flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                </div>
+                <div class="text-[10px] font-mono text-slate-400 bg-slate-800/80 px-2.5 py-0.5 rounded-full border border-slate-700/50">
+                  rental-crm.app
+                </div>
+                <div class="w-6"></div>
+              </div>
+
+              <!-- Preview Image Banner -->
+              <div class="relative flex-1 min-h-[160px] md:min-h-[190px] p-2.5 flex items-center justify-center bg-slate-950 group/img">
+                <img 
+                  src="/src/assets/images/Capture d'écran 2026-08-01 011553.png" 
+                  alt="Rental Management Web Application" 
+                  class="max-h-44 md:max-h-full w-auto object-contain group-hover:scale-[1.015] transition-transform duration-500 rounded-xl" 
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            <!-- Right Column: Content & Actions -->
+            <div class="w-full md:w-7/12 p-4.5 sm:p-5.5 flex flex-col justify-between space-y-3">
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200/80" data-i18n="p2Badge">Rental & CRM App</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-extrabold font-['Outfit'] text-slate-900 group-hover:text-indigo-600 transition-colors" data-i18n="p2Title">
+                  Rental Management Web Application
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="p2Desc">
+                  A rental management web application featuring client management, item tracking, payment status, return dates, and real-time dashboard statistics built using HTML, CSS, JavaScript, Firebase, and Cloudinary.
+                </p>
+
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-1.5 pt-0.5">
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">HTML</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">CSS</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">JavaScript</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">Firebase</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">Cloudinary</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div class="pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                
+                <a href="https://saascientrentalsmanagement.web.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white text-xs font-bold shadow-md shadow-indigo-500/20 transition-all group/btn">
+                  <span data-i18n="linkDemo">Live Project</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Project Management Web Application (In Development) -->
+          <div class="group flex flex-col md:flex-row bg-white border border-slate-200/90 rounded-3xl shadow-md hover:shadow-xl hover:border-amber-300 transition-all duration-300 overflow-hidden">
+            <!-- Left Column: Browser Mockup & Graphics -->
+            <div class="w-full md:w-5/12 bg-slate-950 flex flex-col shrink-0 border-b md:border-b-0 md:border-r border-slate-800">
+              <div class="bg-slate-900 border-b border-slate-800 px-3.5 py-2 flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                </div>
+                <div class="text-[10px] font-mono text-slate-400 bg-slate-800/80 px-2.5 py-0.5 rounded-full border border-slate-700/50 flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                  <span>project-pm.local</span>
+                </div>
+                <div class="w-6"></div>
+              </div>
+
+              <!-- Preview Graphics Banner with Loading / Dev Phase Visual -->
+              <div class="relative flex-1 min-h-[160px] md:min-h-[190px] bg-gradient-to-br from-slate-950 via-rose-950/40 to-slate-900 p-4 flex flex-col justify-between overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.15),transparent_60%)]"></div>
+                <div class="flex items-center justify-between z-10">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-rose-300 bg-rose-950/90 border border-rose-800/50 backdrop-blur-md" data-i18n="p3Badge">Laravel & PHP</span>
+                  <div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-950/90 border border-amber-600/60 backdrop-blur-md shadow-xs">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    <span class="text-[9px] font-extrabold text-amber-300 uppercase tracking-wider">In Development</span>
+                  </div>
+                </div>
+
+                <!-- Animated Loading / Dev Wireframe Card -->
+                <div class="z-10 bg-slate-900/90 backdrop-blur-md rounded-xl p-3 border border-amber-500/30 space-y-2.5 shadow-lg transform group-hover:scale-[1.02] transition-transform duration-300">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <!-- Spinning loading icon -->
+                      <svg class="animate-spin h-3.5 w-3.5 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span class="text-[11px] font-mono text-amber-300 font-bold tracking-tight">Compiling Laravel Assets...</span>
+                    </div>
+                    <span class="text-[9px] font-mono text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">75%</span>
+                  </div>
+
+                  <!-- Animated Progress Bar -->
+                  <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden p-0.5 border border-slate-700">
+                    <div class="bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-500 h-full rounded-full w-3/4 animate-pulse"></div>
+                  </div>
+
+                  <!-- Mock task placeholders -->
+                  <div class="space-y-1 pt-0.5">
+                    <div class="flex items-center justify-between text-[10px] text-slate-300 bg-slate-800/60 px-2 py-0.5 rounded border border-slate-700/50">
+                      <span class="flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        Blade Templates & Auth
+                      </span>
+                      <span class="text-[8px] text-emerald-400 font-bold">DONE</span>
+                    </div>
+                    <div class="flex items-center justify-between text-[10px] text-slate-300 bg-slate-800/60 px-2 py-0.5 rounded border border-slate-700/50">
+                      <span class="flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                        Task Board & Progress API
+                      </span>
+                      <span class="text-[8px] text-amber-400 font-bold">WIP</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Content & Actions -->
+            <div class="w-full md:w-7/12 p-4.5 sm:p-5.5 flex flex-col justify-between space-y-3">
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 border border-rose-200/80" data-i18n="p3Badge">Laravel & PHP</span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold text-amber-700 bg-amber-50 border border-amber-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span>In Development Phase</span>
+                  </span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-extrabold font-['Outfit'] text-slate-900 group-hover:text-rose-600 transition-colors" data-i18n="p3Title">
+                  Project Management Web Application
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="p3Desc">
+                  A project management web application for organizing projects, tasks, team members, and progress tracking built using Laravel, Blade, MySQL, and Bootstrap.
+                </p>
+
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-1.5 pt-0.5">
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">Laravel</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">Blade</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">MySQL</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">Bootstrap</span>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-medium border border-slate-200/60">PHP</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div class="pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                <a href="https://github.com/Abelhad" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors group/btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  <span data-i18n="linkGithub">GitHub Repo</span>
+                </a>
+                <span class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 text-slate-400 text-xs font-bold cursor-not-allowed border border-slate-200">
+                  <svg class="animate-spin h-3 w-3 text-amber-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>In Development</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- About Target Section -->
+      <section id="about" class="scroll-mt-32 space-y-10">
+        <!-- Section Title Bar -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/80 pb-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200/80">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+              <span data-i18n="secAboutBadge">Biography & Background</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-['Outfit'] text-slate-900 tracking-tight" data-i18n="secAboutTitle">
+              About Hassan Abelhad
+            </h2>
+          </div>
+          <p class="text-slate-600 text-sm max-w-md leading-relaxed" data-i18n="secAboutDesc">
+            Full-Stack Developer based in Morocco • Hassan II University Graduate
+          </p>
+        </div>
+
+        <!-- Redesigned About Container -->
+        <div class="space-y-8">
+          
+          <!-- Main Showcase Bio Card -->
+          <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-slate-50/50 to-indigo-50/30 border border-slate-200/90 p-8 sm:p-12 shadow-lg hover:shadow-xl transition-shadow">
+            
+            <!-- Background Decorative Glow -->
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 space-y-8">
+              
+              <!-- Meta Pills Header -->
+              <div class="flex flex-wrap items-center gap-3">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-800 bg-white border border-slate-200 shadow-sm">
+                  <span class="text-sm">🇲🇦</span>
+                  <span data-i18n="aboutLocation">Morocco</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold text-indigo-700 bg-indigo-50/90 border border-indigo-200/80 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                  <span data-i18n="aboutUniv">Hassan II University</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold text-purple-700 bg-purple-50/90 border border-purple-200/80 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                  <span data-i18n="aboutDegree">Full-Stack & DevOps</span>
+                </div>
+              </div>
+
+              <!-- Main Bio Paragraphs -->
+              <div class="space-y-5 max-w-4xl">
+                <p class="text-slate-800 text-base sm:text-lg sm:leading-relaxed font-normal" data-i18n="aboutTextP1">
+                  I'm a Full-Stack Developer from Morocco with a Professional Bachelor's degree in Full-Stack Development & DevOps from Hassan II University. I build responsive and practical web applications using HTML, CSS, JavaScript, PHP, Laravel, React, and SQL.
+                </p>
+                <p class="text-slate-700 text-base sm:text-lg sm:leading-relaxed font-normal" data-i18n="aboutTextP2">
+                  Through academic projects and professional internships, I've gained experience developing modern user interfaces, Shopify stores, and WordPress websites. I enjoy building web solutions while continuously expanding my technical skills.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Technical Skills & Stack Section -->
+      <section id="capabilities" class="scroll-mt-32 space-y-8 reveal-on-scroll">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/80 pb-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200/80">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+              <span data-i18n="secCapabilitiesBadge">Technical Skills</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-['Outfit'] text-slate-900 tracking-tight" data-i18n="secCapabilitiesTitle">
+              Technical Skills & Stack
+            </h2>
+          </div>
+          <p class="text-slate-600 text-sm max-w-md leading-relaxed" data-i18n="secCapabilitiesDesc">
+            Core technical expertise, programming languages, frameworks, and modern toolsets used to build responsive web applications.
+          </p>
+        </div>
+
+        <!-- Integrated Technical Skills Stack Pills Bar -->
+        <div class="p-6 rounded-3xl bg-slate-900 text-white shadow-lg space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-300 flex items-center gap-2" data-i18n="capTechStackTitle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+              Core Tech Stack
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5">
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-amber-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span class="text-xs font-bold truncate">HTML & CSS</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-yellow-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+              <span class="text-xs font-bold truncate">JavaScript</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-indigo-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+              <span class="text-xs font-bold truncate">PHP & Laravel</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-sky-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+              <span class="text-xs font-bold truncate">React.js</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-blue-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+              <span class="text-xs font-bold truncate">SQL & Databases</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-emerald-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span class="text-xs font-bold truncate">Git & GitHub</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-emerald-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span class="text-xs font-bold truncate">Shopify</span>
+            </div>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800/90 text-slate-100 border border-slate-700/80 hover:border-blue-400/50 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+              <span class="text-xs font-bold truncate">WordPress</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capabilities Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          
+          <!-- Cap 1: Frontend -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-indigo-300 transition-all duration-300 group flex flex-col justify-between space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-template"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">React & CSS</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-indigo-600 transition-colors" data-i18n="capFrontendTitle">Frontend Engineering</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capFrontendDesc">
+                Interactive user interfaces built with React, JavaScript, HTML5, and CSS3.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cap 2: Backend -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-rose-300 transition-all duration-300 group flex flex-col justify-between space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 border border-rose-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">Laravel & PHP</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-rose-600 transition-colors" data-i18n="capBackendTitle">Backend Development</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capBackendDesc">
+                Server-side web logic and RESTful architectures powered by PHP and Laravel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cap 3: Databases -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-sky-300 transition-all duration-300 group flex flex-col justify-between space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 border border-sky-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">SQL & Relational</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-sky-600 transition-colors" data-i18n="capDatabaseTitle">Database Management</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capDatabaseDesc">
+                Relational database modeling, query optimization, and SQL data structures.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cap 4: UI & Responsive -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-purple-300 transition-all duration-300 group flex flex-col justify-between space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 border border-purple-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-smartphone"><rect width="18" height="12" x="3" y="4" rx="2"/><rect width="8" height="12" x="13" y="8" rx="1"/><path d="M7 20h6"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">UI & Responsive</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-purple-600 transition-colors" data-i18n="capUIDesignTitle">UI & Responsive Design</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capUIDesignDesc">
+                Pixel-perfect, mobile-first design systems and modern web interfaces.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cap 5: REST APIs -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-emerald-300 transition-all duration-300 group flex flex-col justify-between space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network"><rect width="8" height="8" x="2" y="2" rx="2"/><rect width="8" height="8" x="14" y="2" rx="2"/><rect width="8" height="8" x="8" y="14" rx="2"/><line x1="6" x2="6" y1="10" y2="12"/><line x1="18" x2="18" y1="10" y2="12"/><line x1="12" x2="12" y1="12" y2="14"/><line x1="6" x2="18" y1="12" y2="12"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">APIs & Web Services</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-emerald-600 transition-colors" data-i18n="capAPIsTitle">REST APIs & Integration</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capAPIsDesc">
+                Seamless integration of third-party APIs, authentication, and web services.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cap 6: Version Control & Git -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-300 transition-all duration-300 group flex flex-col justify-between space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 border border-amber-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">Git & GitHub</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-amber-600 transition-colors" data-i18n="capGitTitle">Version Control & Git</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capGitDesc">
+                Structured code management, branch workflows, and version control with GitHub.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cap 7: E-Commerce & CMS -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-teal-300 transition-all duration-300 group flex flex-col justify-between space-y-3 sm:col-span-2 lg:col-span-2">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 border border-teal-100/80 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">Shopify & WordPress</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-teal-600 transition-colors" data-i18n="capEcommerceTitle">E-Commerce & CMS</h3>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="capEcommerceDesc">
+                Custom Shopify store setups and custom WordPress website development.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="scroll-mt-32 space-y-8 reveal-on-scroll">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/80 pb-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200/80">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+              <span data-i18n="secServicesBadge">Services</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-['Outfit'] text-slate-900 tracking-tight" data-i18n="secServicesTitle">
+              Services Offered
+            </h2>
+          </div>
+          <p class="text-slate-600 text-sm max-w-md leading-relaxed" data-i18n="secServicesDesc">
+            Tailored web development services designed to help you launch clean, reliable web solutions.
+          </p>
+        </div>
+
+        <!-- Services Grid (4 Clean Cards) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Service 1: Web Development -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-indigo-300 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between space-y-4">
+            <div class="absolute -top-10 -right-10 w-28 h-28 bg-indigo-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              </div>
+              <h3 class="text-lg font-bold font-['Outfit'] text-slate-900 group-hover:text-indigo-600 transition-colors" data-i18n="service1Title">
+                Web Development
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal" data-i18n="service1Desc">
+                Creation of custom web applications tailored to your needs.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-indigo-600 transition-colors">
+              <span>Full-Stack</span>
+            </div>
+          </div>
+
+          <!-- Service 2: Frontend Development -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-purple-300 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between space-y-4">
+            <div class="absolute -top-10 -right-10 w-28 h-28 bg-purple-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 border border-purple-100 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+              <h3 class="text-lg font-bold font-['Outfit'] text-slate-900 group-hover:text-purple-600 transition-colors" data-i18n="service2Title">
+                Frontend Development
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal" data-i18n="service2Desc">
+                Modern, responsive, and intuitive user interfaces engineered with React, JavaScript, and CSS.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-purple-600 transition-colors">
+              <span>UI / React</span>
+            </div>
+          </div>
+
+          <!-- Service 3: Backend Development -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-rose-300 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between space-y-4">
+            <div class="absolute -top-10 -right-10 w-28 h-28 bg-rose-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 border border-rose-100 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+              </div>
+              <h3 class="text-lg font-bold font-['Outfit'] text-slate-900 group-hover:text-rose-600 transition-colors" data-i18n="service3Title">
+                Backend Development
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal" data-i18n="service3Desc">
+                Secure server-side architecture, REST APIs, and database management using Laravel and PHP.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-rose-600 transition-colors">
+              <span>Laravel & SQL</span>
+            </div>
+          </div>
+
+          <!-- Service 4: Website Maintenance & CMS -->
+          <div class="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between space-y-4">
+            <div class="absolute -top-10 -right-10 w-28 h-28 bg-emerald-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3 class="text-lg font-bold font-['Outfit'] text-slate-900 group-hover:text-emerald-600 transition-colors" data-i18n="service4Title">
+                Website Maintenance & CMS
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal" data-i18n="service4Desc">
+                Custom Shopify stores, WordPress management, and ongoing technical updates for your websites.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-emerald-600 transition-colors">
+              <span>Shopify & WP</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact Target Section -->
+      <section id="contact" class="scroll-mt-32">
+        <div class="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-6 sm:p-12 shadow-2xl border border-slate-800 space-y-8">
+          <div class="absolute -top-32 -right-32 w-96 h-96 bg-indigo-600/30 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Section Header -->
+          <div class="relative z-10 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-950/90 border border-indigo-800">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span data-i18n="secContactBadge">Get In Touch</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-['Outfit'] tracking-tight" data-i18n="secContactTitle">
+              Let's Build Something Great Together
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl" data-i18n="secContactDesc">
+              Have a project in mind, a question, or want to say hello? Fill out the form below or reach out directly.
+            </p>
+          </div>
+
+          <!-- Main Grid: Form + Contact Info -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Contact Form (7 cols on lg) -->
+            <div class="lg:col-span-7 bg-slate-950/60 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-slate-800 space-y-5">
+              <form id="contact-form" action="https://formspree.io/f/mvzenndl" method="POST" class="space-y-4">
+                
+                <!-- Status Feedback Message Banner -->
+                <div id="contact-form-status" class="hidden p-4 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-3 transition-all"></div>
+
+                <!-- Name Field -->
+                <div class="space-y-1.5">
+                  <label for="name" class="block text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="formNameLabel">Your Name</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required 
+                    placeholder="John Doe"
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm placeholder-slate-500 focus:outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                  />
+                </div>
+
+                <!-- Email Field -->
+                <div class="space-y-1.5">
+                  <label for="email" class="block text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="formEmailLabel">Your Email</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="john@example.com"
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm placeholder-slate-500 focus:outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                  />
+                </div>
+
+                <!-- Message Field -->
+                <div class="space-y-1.5">
+                  <label for="message" class="block text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="formMessageLabel">Your Message</label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    placeholder="Tell me about your project or inquiry..."
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm placeholder-slate-500 focus:outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                  type="submit" 
+                  id="contact-submit-btn"
+                  class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-extrabold transition-all shadow-lg shadow-indigo-600/30 disabled:opacity-60 disabled:cursor-not-allowed group cursor-pointer"
+                >
+                  <span id="contact-submit-text" data-i18n="formSubmitBtn">Send Message</span>
+                  <svg id="contact-submit-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Details & Info Cards (5 cols on lg) -->
+            <div class="lg:col-span-5 space-y-4">
+              
+              <!-- Email Card with Copy Button -->
+              <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-800 space-y-3 relative group">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider" data-i18n="contactEmailTitle">Email Address</span>
+                  <!-- Toast notification badge -->
+                  <span id="email-toast" class="hidden text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-700/60 px-2 py-0.5 rounded-md animate-pulse" data-i18n="emailCopiedToast">
+                    Email copied!
+                  </span>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <a href="mailto:hassanabelhad52@gmail.com" class="group/link flex items-center gap-3 text-xs sm:text-sm font-semibold text-indigo-300 font-mono hover:underline truncate">
+                    <div class="w-8 h-8 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0 group-hover/link:bg-indigo-600 group-hover/link:text-white transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </div>
+                    <span class="truncate">hassanabelhad52@gmail.com</span>
+                  </a>
+                  <button 
+                    type="button" 
+                    id="copy-email-card-btn" 
+                    data-copy="hassanabelhad52@gmail.com" 
+                    title="Copy Email Address"
+                    class="p-2.5 rounded-xl bg-slate-700/60 hover:bg-indigo-600 text-slate-300 hover:text-white border border-slate-600/60 transition-all shrink-0 flex items-center gap-1.5 text-xs font-semibold cursor-pointer"
+                  >
+                    <svg id="copy-email-card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span class="hidden sm:inline" data-i18n="btnCopy">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Phone / WhatsApp Card with Copy Button -->
+              <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-800 space-y-3 relative group">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider" data-i18n="contactPhoneTitle">Phone / WhatsApp</span>
+                  <!-- Toast notification badge -->
+                  <span id="phone-toast" class="hidden text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-700/60 px-2 py-0.5 rounded-md animate-pulse" data-i18n="phoneCopiedToast">
+                    Phone number copied!
+                  </span>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <a href="https://wa.me/212621705812" target="_blank" rel="noopener noreferrer" class="group/link flex items-center gap-3 text-xs sm:text-sm font-semibold text-emerald-400 font-mono hover:underline truncate">
+                    <div class="w-8 h-8 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 group-hover/link:bg-emerald-600 group-hover/link:text-white transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.99c-.002 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <span class="truncate">+212 621-705812</span>
+                  </a>
+                  <button 
+                    type="button" 
+                    id="copy-phone-card-btn" 
+                    data-copy="+212 621-705812" 
+                    title="Copy Phone Number"
+                    class="p-2.5 rounded-xl bg-slate-700/60 hover:bg-emerald-600 text-slate-300 hover:text-white border border-slate-600/60 transition-all shrink-0 flex items-center gap-1.5 text-xs font-semibold cursor-pointer"
+                  >
+                    <svg id="copy-phone-card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span class="hidden sm:inline" data-i18n="btnCopy">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- GitHub Profile Card -->
+              <a 
+                href="https://github.com/Abelhad" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-5 rounded-2xl bg-slate-800/70 border border-slate-800 flex items-center justify-between hover:bg-slate-800 hover:border-slate-700 transition-all group"
+              >
+                <div class="space-y-1">
+                  <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider" data-i18n="contactGithubTitle">GitHub Profile</span>
+                  <p class="text-xs sm:text-sm font-semibold text-slate-200 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    <span>github.com/Abelhad</span>
+                  </p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-700/50 group-hover:bg-slate-700 text-slate-300 group-hover:text-white transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+              </a>
+
+              <!-- Availability Status -->
+              <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-800 space-y-1">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider" data-i18n="contactStatusTitle">Availability Status</span>
+                <p class="text-xs sm:text-sm font-semibold text-emerald-400" data-i18n="contactStatusValue">Available for Full-time & Freelance</p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-200">
+      <p data-i18n="footerCopy">&copy; 2026 Hassan Abelhad.</p>
+    </footer>
+
+    <!-- Main JS module -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

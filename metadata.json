@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Hero",
+  "description": "A modern portfolio hero section with floating pill navigation, glassmorphism visual grid background, smooth scroll, and ambient interactive animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
