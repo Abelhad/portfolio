@@ -22,7 +22,7 @@ I'm currently available for **full-time opportunities and freelance projects**.
 * CSS3
 * JavaScript
 * React.js
-* Tailwind CSS
+
 
 ### Backend
 
@@ -56,7 +56,7 @@ A project and task management web application designed to help teams organize pr
 * PHP
 * MySQL
 * Blade
-* Tailwind CSS
+* CSS
 
 **Repository:** [TaskDock](https://github.com/Abelhad/TaskDock)
 
